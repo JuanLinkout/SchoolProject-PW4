@@ -4,16 +4,8 @@ import { GetSchoolSubjectStudentsController } from "../../../presentation/contro
 import { IController } from "../../../presentation/types/controller";
 
 export function makeGetSchoolSubjectStudentsController(): IController {
-  const getSchoolSubjectStudentsRepository =
-    new GetSchoolSubjectStudentsRepositoryMock();
-
-  const getSchoolSubjectStudentsUseCase =
-    new GetSchoolSubjectStudentsImplementation(
-      getSchoolSubjectStudentsRepository
-    );
-
-  const getSchoolSubjectStudentsController =
-    new GetSchoolSubjectStudentsController(getSchoolSubjectStudentsUseCase);
-
-  return getSchoolSubjectStudentsController;
+  const repository = new GetSchoolSubjectStudentsRepositoryMock();
+  const usecase = new GetSchoolSubjectStudentsImplementation(repository);
+  const controller = new GetSchoolSubjectStudentsController(usecase);
+  return controller;
 }

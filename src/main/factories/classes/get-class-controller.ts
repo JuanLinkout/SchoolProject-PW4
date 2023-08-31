@@ -4,8 +4,8 @@ import { GetClassController } from "../../../presentation/controllers/classes/ge
 import { IController } from "../../../presentation/types/controller";
 
 export function makeGetClassController(): IController {
-  const getClassRepository = new GetClassRepositoryMock();
-  const getClassUseCase = new GetClassImplementation(getClassRepository);
-  const getClassController = new GetClassController(getClassUseCase);
-  return getClassController;
+  const repository = new GetClassRepositoryMock();
+  const usecase = new GetClassImplementation(repository);
+  const controller = new GetClassController(usecase);
+  return controller;
 }

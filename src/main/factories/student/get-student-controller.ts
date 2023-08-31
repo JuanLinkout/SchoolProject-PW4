@@ -4,10 +4,8 @@ import { GetStudentsController } from "../../../presentation/controllers/student
 import { IController } from "../../../presentation/types/controller";
 
 export function makeStudentController(): IController {
-  const getStudentsRepository = new GetStudentsMock();
-  const getStudentUseCase = new GetStudentsImplementation(
-    getStudentsRepository
-  );
-  const getStudentsController = new GetStudentsController(getStudentUseCase);
-  return getStudentsController;
+  const repository = new GetStudentsMock();
+  const usecase = new GetStudentsImplementation(repository);
+  const controller = new GetStudentsController(usecase);
+  return controller;
 }
