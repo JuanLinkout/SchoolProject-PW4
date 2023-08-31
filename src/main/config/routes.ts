@@ -24,7 +24,7 @@ export const setupRoutes = (app: Express): void => {
 
   // SchoolSubjects
   router.get(
-    "/schoolSubjects/:schoolSubjectId/students",
+    "/school-subjects/:schoolSubjectId/students",
     adaptRoute(makeGetSchoolSubjectStudentsController())
   );
 };
