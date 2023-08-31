@@ -1,5 +1,5 @@
 import { IStudent } from "../../entities/student";
 
-export interface IGetStudentUseCase {
+export interface IGetStudentsUseCase {
   get: () => Promise<IStudent[]>;
 }

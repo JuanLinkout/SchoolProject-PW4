@@ -1,12 +1,12 @@
-import { IGetStudentUseCase } from "../../../domain/use-cases/students/get-student-use-case";
+import { IGetStudentsUseCase } from "../../../domain/use-cases/students/get-student-use-case";
 import { internalServerError, ok } from "../../helpers/http-helper";
 import { IController } from "../../types/controller";
 import { IHttpRequest, IHttpResponse } from "../../types/http";
 
 export class GetStudentsController implements IController {
-  private getStudentUseCase: IGetStudentUseCase;
+  private getStudentUseCase: IGetStudentsUseCase;
 
-  constructor(getStudentUseCase: IGetStudentUseCase) {
+  constructor(getStudentUseCase: IGetStudentsUseCase) {
     this.getStudentUseCase = getStudentUseCase;
   }
 

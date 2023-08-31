@@ -10,3 +10,8 @@ export const internalServerError = (): IHttpResponse => ({
   body: new ServerError(),
   statusCode: 500,
 });
+
+export const missingParamError = (id: string): IHttpResponse => ({
+  body: new Error(),
+  statusCode: 500,
+});
